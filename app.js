@@ -36,7 +36,18 @@ app.get('/hello', hello.index);
 app.get('/moco', hello.moco);
 app.get('/mocos', hello.mocos);
 app.get('/1/info', api.info);
+/*
+app.post('/creat', api.creat);
+app.get('/read', api.read);
+app.put('/upload', api.upload);
+app.delete('/delete', api.delete);*/
 
+app.post('/user/:name', api.creat1);
+app.get('/user/:name', api.read1);
+/*
+app.put('/user/:name', api.upload1);
+app.delete('/user/:name', api.delete1);
+*/
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
